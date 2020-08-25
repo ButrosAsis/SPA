@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.addForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  /*background: #f4f7ff;*/
+  opacity: 0.95;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  background: #f4f7ff;
+  box-shadow:  6px 6px 11px #cfd2d9, 
+              -6px -6px 11px #ffffff;
+}
+
+.addForm .inputBox {
+  position: relative;
+
+}
+
+.addForm .inputBox input {
+  border: none;
+
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+
+  background: #f4f7ff;
+  box-shadow: inset 6px 6px 11px #cfd2d9, 
+              inset -6px -6px 11px #ffffff;
+
+}
+
+
+
+.formularioEdicion {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 5px !important;
+  margin: 0 auto;
+  margin-left: 5px;
+}
+
+.arriba {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.margenArriba {
+  margin-top: 50px;
+}
+.margenArribaChico {
+  /*margin-top: 50px;*/
+  align-content: right;
+}
+
+.botonActualizar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+  /*align-items: right;
+  text-align: right;*/
+  margin: 5px 10px 0 0;
+}
+
+.botonBuscar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+  /*align-items: right;
+  text-align: right;*/
+  margin: 5px 75px 0 0;
+}
+
+.fuenteTitulo {
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  /*width: 20%;*/
+  margin: 5px 0 0 15px;
+  color: rgb(121, 121, 121);
+}
+
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+
+  vertical-align: bottom;
+  background-color: rgb(41, 41, 41);
+  color: #fff;
+}
+
+.textoColumna {
+  /* ont-weight: 600;*/
+  font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestor Personas</title>
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        
+        <!--Cosas de Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <!--Dark mode-->
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.6/lib/darkmode-js.min.js"></script>
+
+        <!--Fuente-->
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+
+        
+        <div class="arriba">
+
+                <!--<label>
+                    Nombre:
+                    <input type='text' placeholder="Nombre" id='nombre' required>
+                </label>-->
+            <div class="row">
+                <div class="col" style="text-align: right;">
+                    <h2 class="fuenteTitulo"> Gestor Personas </h2>
+                </div>
+
+                <div class="col">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="col">
+                    
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="col">
+                    
+                    <input type="number" class="form-control" id="dni" placeholder="DNI" required>
+                </div>
+
+                <div class="col">
+                    <button onclick="agregarPersona()" id="addButton" class="btn btn-success"> Añadir </button>
+                </div>
+            </div>
+                <!--<label>
+                    Apellido:
+                    <input type='text' placeholder="Apellido" id='apellido' required>
+                </label>
+
+                <label>
+                    DNI:
+                    <input type='number' placeholder="DNI" id='dni' required>
+                </label>
+
+                <button onclick="agregarPersona()" id="addButton" class="btn btn-primary"> Añadir </button>-->
+            
+            <div class="botonBuscar">
+                <button onclick="buscar()" class="margenArribaChico btn btn-primary"> <img src="./images/search.svg"> </button>
+            </div>
+
+            <div class="botonActualizar">
+                <button onclick="listarPersonas('')" class="margenArribaChico btn btn-primary"> <img src="./images/refresh.svg"> </button>
+            </div>
+        </div>
+
+
+        
+
+        <div class="margenArriba">
+            <table class="table table-hover" style="width: 50%; margin: 0 auto; margin-bottom: 50px;">
+                <tr  class="">
+                    <th style="width: 25%;">Nombre</th>
+                    <th style="width: 25%;">Apellido</th>
+                    <th style="width: 25%;">DNI</th>
+                    <th style="width: 25%; text-align: center;">Editar|Eliminar</th>
+                </tr>
+
+                <tbody id="myTable">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div id="formularioEdicion" class="formularioEdicion">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+
+                <div class="col">
+                    <input type="number" class="form-control" id="codigoEditar" placeholder="Código" required>
+                </div>
+
+                <div class="col">
+                    <input type="text" class="form-control" id="nombreEditar" placeholder="Nombre" required>
+                </div>
+
+                <div class="col">
+                    <input type="text" class="form-control" id="apellidoEditar" placeholder="Apellido" required>
+                </div>
+
+                <div class="col">
+                    <input type="number" class="form-control" id="dniEditar" placeholder="DNI" required>
+                </div>
+
+                <div class="col">
+                    <button onclick="guardarPersona()" id="editButton" class="btn btn-primary"> Editar </button>
+                    &nbsp
+                    <button onclick="cerrar()" id="cerrarBusqueda" class="btn btn-danger"> X </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="formularioBuscar" class="formularioEdicion">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="search" placeholder="Filtrar por nombre" required>
+                </div>
+
+                <div class="col">
+                    <button onclick="cerrar()" id="cerrarBusqueda" class="btn btn-danger"> X </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="main.js"></script>
+    </body>
+</html>
